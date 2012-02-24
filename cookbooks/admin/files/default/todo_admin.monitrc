@@ -1,0 +1,5 @@
+check process todo_admin
+  with pidfile /var/run/todo_admin.pid
+  start program = "su deploy -c 'cd /data/iptables_poc/current/admin ; /usr/bin/bundle install ; /usr/bin/bundle exec thin start -d -p 8081 -P tmp/todo_admin.pid'"
+  stop program = "/usr/bin/bundle install && /usr/bin/bundle exec thin stop"
+  

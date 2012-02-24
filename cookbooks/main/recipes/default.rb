@@ -19,7 +19,12 @@
 #uncomment to run the eybackup_slave recipe
 #require_recipe "eybackup_slave"
 
-require_recipe "iptables"
+require_recipe 'admin'
+# if node[:name].lower == 'bastion'
+#   require_recipe "iptables::bastion"
+# else
+#   require_recipe "iptables"
+# end
 
 #uncomment to run the ssmtp recipe
 #require_recipe "ssmtp"
